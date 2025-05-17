@@ -98,6 +98,16 @@ export const createArray = (start, end) => {
   return arr;
 };
 
+export const removeElementFromArray = (array, value) => {
+  return array.filter((element) => {
+    return element !== value;
+  });
+};
+
+export const addElementToArray = (array, value) => {
+  return [...array, value];
+};
+
 export function setCookie(name, value, days) {
   let expires = "";
   if (days) {

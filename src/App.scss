@@ -1,0 +1,115 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-color: rgb(53, 164, 127);
+  --color-purple-400: #6d28d2;
+
+  --nav-height: 62px; // 導航欄高度
+  --delete-btn-right-offset: -42px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
+/* 定義動畫的關鍵幀 */
+@keyframes circulateBorderKeyframes {
+  0% {
+    border-top-color: #ff6ec7;
+    border-right-color: #1b03a3;
+    border-bottom-color: #39ff14;
+    border-left-color: #ffff33;
+  }
+  25% {
+    border-top-color: #ffff33;
+    border-right-color: #ff6ec7;
+    border-bottom-color: #1b03a3;
+    border-left-color: #39ff14;
+  }
+  50% {
+    border-top-color: #39ff14;
+    border-right-color: #ffff33;
+    border-bottom-color: #ff6ec7;
+    border-left-color: #1b03a3;
+  }
+  75% {
+    border-top-color: #1b03a3;
+    border-right-color: #39ff14;
+    border-bottom-color: #ffff33;
+    border-left-color: #ff6ec7;
+  }
+  100% {
+    border-top-color: #ff6ec7;
+    border-right-color: #1b03a3;
+    border-bottom-color: #39ff14;
+    border-left-color: #ffff33;
+  }
+}
+
+@keyframes blinkBorderKeyframes {
+  0% {
+    border-color: #ff6ec7;
+  }
+  25% {
+    border-color: #1b03a3;
+  }
+  50% {
+    border-color: #39ff14;
+  }
+  75% {
+    border-color: #ffff33;
+  }
+  100% {
+    border-color: #ff6ec7;
+  }
+}
+
+@keyframes blinkBorderKeyframes2 {
+  0% {
+    border-color: #ccc;
+  }
+  25% {
+    border-color: #ccc;
+  }
+  50% {
+    border-color: transparent;
+  }
+  75% {
+    border-color: transparent;
+  }
+}
+
+@keyframes easeIn {
+  0% {
+    transform: translateX(-50%) translateY(20px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(calc(5px + var(--nav-height)));
+  }
+}
+
+/* 動畫的樣式設定 */
+.border-animation {
+  animation: blinkBorderKeyframes2 1.4s ease-in infinite;
+  // animation: blinkBorderKeyframes2 5s ease-in-out infinite;
+  // animation: borderKeyframes 5s ease-in-out infinite alternate;
+}
+
+.loading-zone {
+  // position: fixed;
+  border: 1px solid red;
+  width: 100%;
+  height: 400px;
+  // bottom: -400px;
+  // background: transparent;
+}
